@@ -1,0 +1,55 @@
+IA EVOLUTIVA AGRESSIVA BTCUSDT — PAPER TRADING 15m
+==================================================
+
+Esta e uma COPIA independente da IA evolutiva. Os arquivos da IA original nao
+sao alterados. Ela nao envia ordens reais; as bancas e operacoes sao ficticias.
+
+ABRIR
+-----
+Execute "Abrir IA Evolutiva Agressiva BTC 15m.bat". Escolha uma populacao de
+2 a 100 agentes (padrao 20). Cada agente comeca com 100 USDT ficticios.
+Ao reabrir, pressione Enter para continuar a memoria desta copia.
+
+O QUE FOI ALTERADO NESTA COPIA
+------------------------------
+Somente o perfil de entrada/risco:
+
+* Limite de entrada entre 50% e 65% de estimativa de alta (a IA original usa
+  limites entre 53% e 78%). Isso tende a permitir mais entradas.
+* Risco planejado por trade entre 1% e 6% da banca, medido ate o stop (a IA
+  original usa 0,25% a 3%).
+
+O modelo, os dados analisados, a forma de aprender, o periodo de 15 minutos,
+custos simulados, stop/alvo, horizonte de previsao, avaliacao e evolucao semanal
+permanecem iguais aos da IA original. Continua sendo Spot comprado, sem venda a
+descoberto e sem alavancagem. Um sinal de baixa fecha a posicao ou mantem a IA em
+USDT.
+
+APRENDIZADO E LIMITES
+---------------------
+O modelo ajusta seus pesos depois de cada candle avaliado. Os limites de entrada
+e risco podem mudar quando a populacao e avaliada ao fim da geracao de 7 dias
+(ou antes, se todos os agentes ficarem sem banca). O ranking considera retorno
+simulado, rebaixamento maximo e acerto direcional.
+
+Perder um trade nao faz a IA reduzir automaticamente o risco naquele instante.
+O sistema pode selecionar estrategia menos arriscada em geracoes seguintes se o
+resultado com menos rebaixamento for melhor, mas isso nao e garantido. A copia
+nao compartilha aprendizado ou memoria com a IA original.
+
+Esta copia treina sua populacao inicial com o historico publico BTCUSDT e cria
+uma memoria propria. Ela nao importa o estado da populacao que ja esta rodando
+na IA original.
+
+MEMORIA SEPARADA
+----------------
+Os dados desta copia ficam em:
+  ia_evolutiva_agressiva_btc_15m_dados\memoria_ia_evolutiva_agressiva.sqlite3
+
+A memoria guarda candles, snapshots, previsoes, parametros, operacoes, placar,
+saldos e geracoes. Ao reabrir, a copia recupera candles fechados durante a
+pausa e continua do proprio estado.
+
+Mesmo em paper trading, esta versao pode sofrer perdas simuladas maiores e fazer
+mais trades falsos. Os percentuais sao parametros do experimento, nao taxas de
+acerto garantidas.
